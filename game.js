@@ -32,7 +32,7 @@ function nextSequence(){
 
     // Inside nextSequence(), increase the level by 1 every time nextSequence() is called.
     level++;
-    
+
     // Inside nextSequence(), update the h1 with this change in the value of level.
     $("#level-title").text("Level " + level);
 
@@ -53,13 +53,13 @@ function playSound(name){
     audio.play();
 };
 
-function animatePress(currentColour){ 
+function animatePress(currentColour){
     // jQuery to add pressed class to the button that gets clicked
     $("#" + currentColour).addClass("pressed");
 
     // Remove class after 100 millesec timeout
     setTimeout(function(){
-        $("#" + currentColour).removeClass("pressed");       
+        $("#" + currentColour).removeClass("pressed");
     }, 100);
 };
 
@@ -82,12 +82,12 @@ function startOver(){
 };
 
 function checkAnswer(currentLevel){
-    //  Write an if statement inside checkAnswer() to check if the most recent user answer is the same as the game pattern. 
+    //  Write an if statement inside checkAnswer() to check if the most recent user answer is the same as the game pattern.
     //  If so then log "success", otherwise log "wrong".
     if(gamePattern[currentLevel] == userClickedPattern[currentLevel]){
         console.log("Success");
 
-        //  If the user got the most recent answer right in step 3, 
+        //  If the user got the most recent answer right in step 3,
         //  then check that they have finished their sequence with another if statement.
         if(gamePattern.length == userClickedPattern.length){
             setTimeout(function(){
